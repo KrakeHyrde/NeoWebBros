@@ -8,6 +8,10 @@
   --display: Impact, "Arial Black", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -117,19 +121,35 @@ svg text {
 
 .stops {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-bottom: 3px solid;
   text-align: center;
 }
 
-.stops a {
+.stops button {
   padding: 10px 3px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
   font-size: clamp(.68rem, 2vw, 1rem);
   font-weight: 900;
+  cursor: pointer;
 }
 
-.stops a + a {
+.stops button + button {
   border-left: 2px solid;
+}
+
+.stops button:hover, .stops button[aria-pressed="true"] {
+  background: #171717;
+  color: #f6e751;
+}
+
+.stops .product-filter-status {
+  padding: 4px 8px;
+  border-top: 2px solid;
+  grid-column: 1 / -1;
+  text-align: right;
 }
 
 .lookbook {
@@ -164,6 +184,11 @@ svg text {
   padding: 12px;
 }
 
+.lookbook.product-filter-active .piece:not([hidden]) {
+  grid-column: 1 / -1;
+  grid-row: auto;
+}
+
 .sizing {
   padding: 15px 5%;
   background: #ff9c80;
@@ -175,6 +200,19 @@ svg text {
 }
 
 @media (max-width: 600px) {
+  .stops {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stops button:nth-child(3) {
+    border-left: 0;
+    border-top: 2px solid;
+  }
+
+  .stops button:nth-child(4) {
+    border-top: 2px solid;
+  }
+
   .wall {
     grid-template-columns: 1fr;
   }
