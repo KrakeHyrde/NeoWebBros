@@ -8,6 +8,10 @@
   --display: Georgia, serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -136,6 +140,35 @@ body {
   margin: 65px auto;
 }
 
+.coffee-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 10px;
+  padding-block: 12px;
+  border-block: 1px solid #a78e78;
+}
+
+.coffee-filters button {
+  padding: 7px 11px;
+  border: 1px solid #8d6f5b;
+  background: transparent;
+  color: var(--ink);
+  font: 800 .76rem/1.2 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.coffee-filters button:hover, .coffee-filters button[aria-pressed="true"] {
+  background: #332019;
+  color: #ffe9cb;
+}
+
+.coffee-filters .product-filter-status {
+  margin-left: auto;
+  color: #765e4d;
+}
+
 .roast {
   display: grid;
   grid-template-columns: 42px minmax(70px, 125px) 1fr;
@@ -182,6 +215,11 @@ body {
 }
 
 @media (max-width: 680px) {
+  .coffee-filters .product-filter-status {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .mast {
     display: flex;
     justify-content: center;

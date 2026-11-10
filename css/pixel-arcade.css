@@ -8,6 +8,10 @@
   --display: "Courier New", monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -107,7 +111,7 @@ body {
   flex-wrap: wrap;
 }
 
-.screen nav a, .controls label {
+.screen nav a, .controls button {
   padding: 8px;
   background: #34254f;
   border: 1px solid #a285ff;
@@ -123,17 +127,30 @@ body {
   margin: 8px 0;
 }
 
-.controls label {
+.controls button {
+  font: 800 .78rem/1.2 "Courier New", monospace;
   cursor: pointer;
 }
 
-input[type=radio] {
-  position: absolute;
-  opacity: 0;
+.controls button[aria-pressed="true"] {
+  background: #ebff78;
+  color: #241838;
+}
+
+.controls .product-filter-status {
+  align-self: center;
+  margin-left: auto;
+  color: #bca8de;
+}
+
+.panels {
+  display: grid;
+  gap: 14px;
 }
 
 .panel {
-  display: none;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
   align-items: center;
   border: 1px solid #a285ff;
   gap: 16px;
@@ -146,21 +163,6 @@ input[type=radio] {
 .panel svg {
   height: 100%;
   object-fit: cover;
-}
-
-#slot0:checked ~ .panels .p0, #slot1:checked ~ .panels .p1, #slot2:checked ~ .panels .p2 {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-}
-
-#slot0:checked ~ .controls label:nth-child(1), #slot1:checked ~ .controls label:nth-child(2), #slot2:checked ~ .controls label:nth-child(3) {
-  background: #ebff78;
-  color: #241838;
-}
-
-#slot0:focus-visible ~ .controls label:nth-child(1), #slot1:focus-visible ~ .controls label:nth-child(2), #slot2:focus-visible ~ .controls label:nth-child(3) {
-  outline: 2px solid white;
-  outline-offset: 2px;
 }
 
 details {
@@ -179,7 +181,12 @@ summary {
 }
 
 @media (max-width: 530px) {
-  #slot0:checked ~ .panels .p0, #slot1:checked ~ .panels .p1, #slot2:checked ~ .panels .p2 {
+  .controls .product-filter-status {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .panel {
     grid-template-columns: 1fr;
   }
 }

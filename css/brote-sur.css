@@ -8,6 +8,10 @@
   --display: Georgia, serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -99,6 +103,44 @@ svg text {
   font-size: .8rem;
 }
 
+.plant-filters {
+  display: grid;
+  gap: 8px;
+}
+
+.plant-filters .label {
+  margin: 0;
+}
+
+.plant-filter-options {
+  display: grid;
+  gap: 5px;
+}
+
+.plant-filter-options button {
+  padding: 7px 9px;
+  border: 1px solid #87966d;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: 700 .76rem/1.2 system-ui, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.plant-filter-options button:hover {
+  background: #edf0c7;
+}
+
+.plant-filter-options button[aria-pressed="true"] {
+  background: var(--button);
+  color: var(--btntext);
+}
+
+.plant-filters .product-filter-status {
+  color: #5f7055;
+}
+
 .intro {
   padding: clamp(24px, 5vw, 72px);
   background: #dce8b9;
@@ -177,6 +219,20 @@ summary {
 
   .plant-logo br, .rail > span {
     display: none;
+  }
+
+  .plant-filters {
+    flex: 1 1 100%;
+  }
+
+  .plant-filter-options {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .plant-filter-options button {
+    flex: 0 0 auto;
   }
 
   .plant {
