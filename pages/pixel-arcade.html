@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Pixel Arcade | Demo NeoWebBros</title>
     <link rel="stylesheet" href="../css/pixel-arcade.css" />
+    <link rel="stylesheet" href="../css/product-filters.css" />
+    <link rel="stylesheet" href="../css/demo-chatbot.css" />
   </head>
-  <body>
+  <body data-chatbot-business="pixel-arcade">
     <main class="console">
       <div class="status">
         <span>● PLAYER 01</span>
@@ -23,18 +25,17 @@
       </section>
       <section id="inventario">
         <h2>Inventario</h2>
-        <p class="label">Seleccioná una ranura</p>
+        <p class="label">Filtrá el inventario</p>
         <div class="slots">
-          <input type="radio" name="slot" id="slot0" checked />
-          <input type="radio" name="slot" id="slot1" />
-          <input type="radio" name="slot" id="slot2" />
-          <div class="controls">
-            <label for="slot0">01 / Control</label>
-            <label for="slot1">02 / Juego</label>
-            <label for="slot2">03 / Combo</label>
+          <div class="controls arcade-filters" data-product-filter data-filter-target="#inventario" aria-label="Filtrar inventario por categoría">
+            <button type="button" data-filter-value="all" aria-pressed="true">00 / Todo</button>
+            <button type="button" data-filter-value="controles" aria-pressed="false">01 / Controles</button>
+            <button type="button" data-filter-value="juegos" aria-pressed="false">02 / Juegos</button>
+            <button type="button" data-filter-value="combos" aria-pressed="false">03 / Combos</button>
+            <span class="product-filter-status" data-filter-status aria-live="polite"></span>
           </div>
           <div class="panels">
-            <article class="panel p0">
+            <article class="panel p0" data-product-category="controles">
               <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <rect width="600" height="320" fill="#ba83fa" />
                 <g stroke="#2a1a49" opacity=".25">
@@ -83,7 +84,7 @@
                 <strong>$ 29.900 ARS</strong>
               </div>
             </article>
-            <article class="panel p1">
+            <article class="panel p1" data-product-category="juegos">
               <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <rect width="600" height="320" fill="#ef9d86" />
                 <g stroke="#2a1a49" opacity=".25">
@@ -132,7 +133,7 @@
                 <strong>$ 42.000 ARS</strong>
               </div>
             </article>
-            <article class="panel p2">
+            <article class="panel p2" data-product-category="combos controles">
               <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <rect width="600" height="320" fill="#a2e5cf" />
                 <g stroke="#2a1a49" opacity=".25">
@@ -200,5 +201,7 @@
       <span>CRÉDITOS / DEMO DE NEOWEBBROS</span>
       <a href="../index.html">SALIR</a>
     </footer>
+    <script src="../js/product-filters.js" defer></script>
+    <script src="../js/demo-chatbot.js" defer></script>
   </body>
 </html>

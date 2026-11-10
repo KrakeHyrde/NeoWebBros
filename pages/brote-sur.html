@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Brote Sur | Demo NeoWebBros</title>
     <link rel="stylesheet" href="../css/brote-sur.css" />
+    <link rel="stylesheet" href="../css/product-filters.css" />
+    <link rel="stylesheet" href="../css/demo-chatbot.css" />
   </head>
-  <body>
+  <body data-chatbot-business="brote-sur">
     <div class="layout">
       <aside class="rail">
         <a class="plant-logo" href="#entrada">✿<br />Brote Sur</a>
@@ -14,6 +16,16 @@
           <a href="#luz">01 · Elegí la luz</a>
           <a href="#riego">02 · Primer riego</a>
         </nav>
+        <div class="plant-filters" data-product-filter data-filter-target="#luz">
+          <p class="label">Filtrar por luz</p>
+          <div class="plant-filter-options" aria-label="Filtrar plantas por cantidad de luz">
+            <button type="button" data-filter-value="all" aria-pressed="true">Todas</button>
+            <button type="button" data-filter-value="luz-suave" aria-pressed="false">Luz suave</button>
+            <button type="button" data-filter-value="poca-luz" aria-pressed="false">Poca luz</button>
+            <button type="button" data-filter-value="mucha-luz" aria-pressed="false">Mucha luz</button>
+          </div>
+          <span class="product-filter-status" data-filter-status aria-live="polite"></span>
+        </div>
         <span>Vivero de barrio</span>
       </aside>
       <main id="entrada">
@@ -25,7 +37,7 @@
         <section id="luz" class="garden">
           <h2>¿Cómo es tu ventana?</h2>
           <p>Abrí la ficha que corresponda a la luz de tu ambiente.</p>
-          <details open>
+          <details open data-product-category="luz-suave">
             <summary>Luz indirecta suave</summary>
             <div class="plant">
               <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +56,7 @@
               </div>
             </div>
           </details>
-          <details>
+          <details data-product-category="poca-luz">
             <summary>Poca luz</summary>
             <div class="plant">
               <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +75,7 @@
               </div>
             </div>
           </details>
-          <details>
+          <details data-product-category="mucha-luz">
             <summary>Mucha luz indirecta</summary>
             <div class="plant">
               <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -97,5 +109,7 @@
       </div>
       <a href="../index.html">↗ Portfolio NeoWebBros</a>
     </footer>
+    <script src="../js/product-filters.js" defer></script>
+    <script src="../js/demo-chatbot.js" defer></script>
   </body>
 </html>

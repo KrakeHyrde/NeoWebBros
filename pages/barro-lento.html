@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Barro Lento | Demo NeoWebBros</title>
     <link rel="stylesheet" href="../css/barro-lento.css" />
+    <link rel="stylesheet" href="../css/product-filters.css" />
+    <link rel="stylesheet" href="../css/demo-chatbot.css" />
   </head>
-  <body>
+  <body data-chatbot-business="barro-lento">
     <header class="book">
       <div>
         <p class="label">Cuaderno de taller / N.º 01</p>
@@ -28,7 +30,15 @@
           <h1>Piezas para usar todos los días.</h1>
           <p>Cerámica de mesa con esmaltes mates, formas suaves y bordes hechos a mano.</p>
         </header>
-        <figure class="spread">
+        <nav class="catalog-filters book-filters" data-product-filter data-filter-target="#coleccion" aria-label="Filtrar piezas por categoría">
+          <span class="label">Filtrar catálogo</span>
+          <button type="button" data-filter-value="all" aria-pressed="true">Todas</button>
+          <button type="button" data-filter-value="tazas" aria-pressed="false">Tazas</button>
+          <button type="button" data-filter-value="cuencos" aria-pressed="false">Cuencos</button>
+          <button type="button" data-filter-value="platos" aria-pressed="false">Platos</button>
+          <span class="product-filter-status" data-filter-status aria-live="polite"></span>
+        </nav>
+        <figure class="spread" data-product-category="tazas">
           <div>
             <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <rect width="600" height="320" fill="#dcad92" />
@@ -119,7 +129,7 @@
             <strong>$ 18.900 ARS</strong>
           </figcaption>
         </figure>
-        <figure class="spread">
+        <figure class="spread" data-product-category="cuencos">
           <div>
             <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <rect width="600" height="320" fill="#d7bf9c" />
@@ -209,7 +219,7 @@
             <strong>$ 22.500 ARS</strong>
           </figcaption>
         </figure>
-        <figure class="spread">
+        <figure class="spread" data-product-category="platos">
           <div>
             <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <rect width="600" height="320" fill="#b3987c" />
@@ -311,5 +321,7 @@
       <p>Cerámica de autor · Tienda de muestra</p>
       <a href="../index.html">↗ Portfolio NeoWebBros</a>
     </footer>
+    <script src="../js/product-filters.js" defer></script>
+    <script src="../js/demo-chatbot.js" defer></script>
   </body>
 </html>
