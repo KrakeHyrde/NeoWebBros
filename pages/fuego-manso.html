@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Fuego Manso | Demo NeoWebBros</title>
     <link rel="stylesheet" href="../css/fuego-manso.css" />
+    <link rel="stylesheet" href="../css/product-filters.css" />
+    <link rel="stylesheet" href="../css/demo-chatbot.css" />
   </head>
-  <body>
+  <body data-chatbot-business="fuego-manso">
     <header>
       <div class="ticker">TOSTADORES DE CAFÉ / LOTES DE TEMPORADA</div>
       <div class="mast">
@@ -57,7 +59,14 @@
       <section class="roasts" id="cafes">
         <p class="label">La carta / 250 g</p>
         <h2>Elegí por perfil de sabor</h2>
-        <article class="roast">
+        <nav class="coffee-filters" data-product-filter data-filter-target="#cafes" aria-label="Filtrar cafés por perfil">
+          <button type="button" data-filter-value="all" aria-pressed="true">Todos</button>
+          <button type="button" data-filter-value="dulce" aria-pressed="false">Dulces</button>
+          <button type="button" data-filter-value="frutal" aria-pressed="false">Frutales</button>
+          <button type="button" data-filter-value="intenso" aria-pressed="false">Intensos</button>
+          <span class="product-filter-status" data-filter-status aria-live="polite"></span>
+        </nav>
+        <article class="roast" data-product-category="dulce">
           <span class="label">01</span>
           <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
             <rect width="600" height="320" fill="#bba27f" />
@@ -90,7 +99,7 @@
             <strong>$ 14.500 ARS</strong>
           </div>
         </article>
-        <article class="roast">
+        <article class="roast" data-product-category="frutal">
           <span class="label">02</span>
           <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
             <rect width="600" height="320" fill="#d6a36e" />
@@ -123,7 +132,7 @@
             <strong>$ 16.200 ARS</strong>
           </div>
         </article>
-        <article class="roast">
+        <article class="roast" data-product-category="intenso">
           <span class="label">03</span>
           <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
             <rect width="600" height="320" fill="#ad6351" />
@@ -179,5 +188,7 @@
         <a href="../index.html">↗ Portfolio NeoWebBros</a>
       </div>
     </footer>
+    <script src="../js/product-filters.js" defer></script>
+    <script src="../js/demo-chatbot.js" defer></script>
   </body>
 </html>

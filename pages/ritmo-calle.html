@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Ritmo Calle | Demo NeoWebBros</title>
     <link rel="stylesheet" href="../css/ritmo-calle.css" />
+    <link rel="stylesheet" href="../css/product-filters.css" />
+    <link rel="stylesheet" href="../css/demo-chatbot.css" />
   </head>
-  <body>
+  <body data-chatbot-business="ritmo-calle">
     <header class="streethead">
       <a href="#drop">RITMO<span>CALLE</span></a>
       <span class="label">INDUMENTARIA URBANA / DROP 01</span>
@@ -18,15 +20,17 @@
         <p>Prendas amplias y accesorios para salir de casa con lo justo.</p>
         <a href="#looks" class="stamp">VER PRENDAS ↘</a>
       </section>
-      <nav class="stops" aria-label="Ir a la prenda">
-        <a href="#prenda0">01 / REMERA</a>
-        <a href="#prenda1">02 / GORRA</a>
-        <a href="#prenda2">03 / BUZO</a>
+      <nav class="stops" data-product-filter data-filter-target="#looks" aria-label="Filtrar prendas por categoría">
+        <button type="button" data-filter-value="all" aria-pressed="true">00 / TODO</button>
+        <button type="button" data-filter-value="remeras" aria-pressed="false">01 / REMERAS</button>
+        <button type="button" data-filter-value="accesorios" aria-pressed="false">02 / ACCESORIOS</button>
+        <button type="button" data-filter-value="buzos" aria-pressed="false">03 / BUZOS</button>
+        <span class="product-filter-status" data-filter-status aria-live="polite"></span>
       </nav>
       <section id="looks" class="lookbook">
         <h2>DROP ASFALTO</h2>
         <div class="wall">
-          <article id="prenda0" class="piece">
+          <article id="prenda0" class="piece" data-product-category="remeras">
             <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <rect width="600" height="320" fill="#f8b648" />
               <path d="M0 250L600 39v44L0 294zM0 304L600 92v10L0 315z" fill="#252026" opacity=".22" />
@@ -44,7 +48,7 @@
               <strong>$ 24.900 ARS</strong>
             </div>
           </article>
-          <article id="prenda1" class="piece">
+          <article id="prenda1" class="piece" data-product-category="accesorios">
             <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <rect width="600" height="320" fill="#c1adf3" />
               <path d="M0 250L600 39v44L0 294zM0 304L600 92v10L0 315z" fill="#252026" opacity=".22" />
@@ -63,7 +67,7 @@
               <strong>$ 18.900 ARS</strong>
             </div>
           </article>
-          <article id="prenda2" class="piece">
+          <article id="prenda2" class="piece" data-product-category="buzos">
             <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
               <rect width="600" height="320" fill="#a9c8db" />
               <path d="M0 250L600 39v44L0 294zM0 304L600 92v10L0 315z" fill="#252026" opacity=".22" />
@@ -93,5 +97,7 @@
       <span>RITMO CALLE / TIENDA DE MUESTRA</span>
       <a href="../index.html">↗ Portfolio NeoWebBros</a>
     </footer>
+    <script src="../js/product-filters.js" defer></script>
+    <script src="../js/demo-chatbot.js" defer></script>
   </body>
 </html>
