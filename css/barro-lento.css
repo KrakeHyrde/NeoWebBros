@@ -1,0 +1,178 @@
+:root {
+  --bg: #faf2e6;
+  --ink: #47332b;
+  --paper: #fff9ef;
+  --line: #c7ae9e;
+  --button: #683f33;
+  --btntext: #fff6e6;
+  --display: Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+a:focus-visible, summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+h1, h2, h3, p, figure {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+}
+
+h1 {
+  font-size: clamp(2.6rem, 6vw, 5.6rem);
+  line-height: 1.01;
+  margin: 10px 0 14px;
+  letter-spacing: -.05em;
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.05;
+  margin: 6px 0 12px;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+svg text {
+  font-family: system-ui, sans-serif;
+}
+
+.label {
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.book {
+  width: min(1040px, 92%);
+  margin: auto;
+  border-bottom: 1px solid #9a7a67;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 24px 0;
+  align-items: center;
+}
+
+.book > div > a {
+  font: 700 2rem Georgia;
+  text-decoration: none;
+}
+
+.book summary {
+  cursor: pointer;
+  text-align: right;
+}
+
+.book nav {
+  display: grid;
+  text-align: right;
+}
+
+.journal {
+  width: min(950px, 92%);
+  margin: auto;
+}
+
+.journal > header {
+  text-align: center;
+  padding: 50px 0 34px;
+}
+
+.journal > header h1 {
+  max-width: 15ch;
+  margin: 12px auto;
+}
+
+.journal > header p:last-child {
+  max-width: 44ch;
+  margin: auto;
+}
+
+.spread {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: clamp(12px, 5vw, 60px);
+  align-items: end;
+  border-top: 1px solid #ad9080;
+  padding: 20px 0;
+  margin-bottom: 10px;
+}
+
+.spread:nth-of-type(2) {
+  grid-template-columns: 1fr 1.7fr;
+}
+
+.spread:nth-of-type(2) > div {
+  order: 2;
+}
+
+.spread figcaption {
+  padding-bottom: 12px;
+}
+
+.spread h3 {
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  font-weight: 400;
+}
+
+.spread p {
+  margin: 6px 0;
+}
+
+.spread svg {
+  border-radius: 46% 46% 4% 4% / 12% 12% 4% 4%;
+}
+
+blockquote {
+  width: min(620px, 90%);
+  margin: 36px auto;
+  text-align: center;
+  background: #f0dec9;
+  padding: 24px;
+}
+
+.colophon {
+  text-align: center;
+  border-top: 1px solid #ad9080;
+  padding: 26px 12px;
+}
+
+.colophon a {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+@media (max-width: 620px) {
+  .spread, .spread:nth-of-type(2) {
+    grid-template-columns: 1fr;
+  }
+
+  .spread:nth-of-type(2) > div {
+    order: 0;
+  }
+}

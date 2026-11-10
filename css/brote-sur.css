@@ -1,0 +1,185 @@
+:root {
+  --bg: #f5f4e8;
+  --ink: #243528;
+  --paper: #fffef5;
+  --line: #a6b195;
+  --button: #263d2a;
+  --btntext: #fff9dc;
+  --display: Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+a:focus-visible, summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+h1, h2, h3, p, figure {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+}
+
+h1 {
+  font-size: clamp(2.6rem, 6vw, 5.6rem);
+  line-height: 1.01;
+  margin: 10px 0 14px;
+  letter-spacing: -.05em;
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.05;
+  margin: 6px 0 12px;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+svg text {
+  font-family: system-ui, sans-serif;
+}
+
+.label {
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(160px, 235px) minmax(0, 1fr);
+  width: min(1200px, 100%);
+  margin: auto;
+}
+
+.rail {
+  padding: 36px 22px;
+  border-right: 1px solid #a6b195;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-self: start;
+  position: sticky;
+  top: 0;
+}
+
+.plant-logo {
+  font: 700 2.15rem/1.05 Georgia;
+  text-decoration: none;
+}
+
+.rail nav {
+  display: grid;
+  gap: 10px;
+}
+
+.rail span {
+  font-size: .8rem;
+}
+
+.intro {
+  padding: clamp(24px, 5vw, 72px);
+  background: #dce8b9;
+  border-radius: 0 0 65% 0;
+}
+
+.intro h1 {
+  max-width: 9ch;
+}
+
+.garden, .water {
+  margin: 32px clamp(16px, 5vw, 65px);
+}
+
+details {
+  margin-top: 12px;
+  border: 1px solid #87966d;
+  border-radius: 18px;
+  background: #fffef5;
+  overflow: hidden;
+}
+
+summary {
+  cursor: pointer;
+  padding: 15px 20px;
+  font-weight: 800;
+}
+
+.plant {
+  display: grid;
+  grid-template-columns: 1fr .85fr;
+  align-items: center;
+  gap: 20px;
+  padding: 0 16px 16px;
+}
+
+.plant svg {
+  border-radius: 90px 90px 18px 18px;
+}
+
+.water {
+  border-left: 6px solid #92a478;
+  padding: 12px 20px;
+}
+
+.garden-end {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 24px 6%;
+  background: #263d2a;
+  color: #fff9dc;
+}
+
+.garden-end strong {
+  font: 700 2rem Georgia;
+}
+
+@media (max-width: 660px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rail {
+    position: static;
+    border-right: 0;
+    border-bottom: 1px solid #a6b195;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 12px 5%;
+    gap: 16px;
+  }
+
+  .plant-logo br, .rail > span {
+    display: none;
+  }
+
+  .plant {
+    grid-template-columns: 1fr;
+  }
+}
