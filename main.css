@@ -201,6 +201,158 @@
     .addon .features { margin-top: 0; }
     .note { font-size: .9rem; }
 
+    /* Ofertas — encabezado y distribución */
+    .offers-heading {
+      max-width: 48rem;
+      margin-bottom: 2rem;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    /* Tarjetas — acento propio para cada propuesta */
+    .offer-card {
+      --offer-accent: var(--accent);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      border-top: 3px solid var(--offer-accent);
+      background:
+        radial-gradient(ellipse at top right, #bbff7a14, transparent 60%),
+        var(--surface);
+      box-shadow: 0 1rem 2.5rem #00000026;
+    }
+
+    .offer-card-launch {
+      --offer-accent: var(--lavender);
+      background:
+        radial-gradient(ellipse at top right, #c9bdff24, transparent 60%),
+        var(--surface);
+    }
+
+    .offer-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .offer-topline .eyebrow {
+      margin: 0;
+      color: var(--offer-accent);
+    }
+
+    .offer-badge {
+      padding: .35rem .65rem;
+      border: 1px solid var(--offer-accent);
+      border-radius: 2rem;
+      color: var(--offer-accent);
+      font-size: .75rem;
+      font-weight: 750;
+    }
+
+    .offer-card h3 {
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+
+    /* Precio y resumen */
+    .offer-pricing {
+      margin-top: 1.5rem;
+      padding-block: 1rem;
+      border-block: 1px solid var(--border);
+    }
+
+    .offer-card .offer-reference {
+      margin: 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .offer-reference s {
+      display: inline-block;
+      margin-left: .25rem;
+    }
+
+    .offer-card .price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .35rem .6rem;
+      margin: .5rem 0 0;
+      color: var(--offer-accent);
+    }
+
+    .offer-description {
+      margin: 1.25rem 0;
+    }
+
+    /* Beneficios — título y detalle por cada ítem */
+    .offer-features {
+      display: grid;
+      gap: 1rem;
+      margin: 0 0 1.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .offer-features li {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .offer-features li::before {
+      content: "✓";
+      position: absolute;
+      top: .1rem;
+      left: 0;
+      display: grid;
+      place-items: center;
+      width: 1.35rem;
+      height: 1.35rem;
+      border: 1px solid var(--offer-accent);
+      border-radius: 50%;
+      color: var(--offer-accent);
+      font-size: .75rem;
+    }
+
+    .offer-features strong,
+    .offer-features span {
+      display: block;
+    }
+
+    .offer-features strong {
+      color: var(--text);
+      font-size: .95rem;
+    }
+
+    .offer-features span {
+      margin-top: .15rem;
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+
+    .offer-card .offer-note {
+      margin: auto 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    @media (max-width: 50rem) {
+      .offers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .about {
       border-block: 1px solid var(--border);
       background: var(--surface);
