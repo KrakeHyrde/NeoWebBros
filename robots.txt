@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neowebbros.onrender.com/sitemap.xml
+
