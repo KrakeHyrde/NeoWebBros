@@ -225,8 +225,36 @@ h3 {
 
 /* Ofertas — encabezado y distribución */
 .offers-heading {
-  max-width: 48rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(27rem, .85fr);
+  align-items: center;
+  gap: 2rem 3rem;
+  width: 100%;
   margin-bottom: 2rem;
+}
+
+.offers-heading > div:first-child {
+  max-width: 42rem;
+}
+
+.offers-heading .section-intro {
+  margin-bottom: 0;
+}
+
+@media (max-width: 52rem) {
+  .offers-heading {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .offers-heading > div:first-child {
+    max-width: 48rem;
+  }
+
+  .offers-heading .offer-countdown {
+    max-width: none;
+    justify-self: stretch;
+  }
 }
 
 .offers-grid {
@@ -312,6 +340,96 @@ h3 {
   color: var(--offer-accent);
 }
 
+/* Cuenta regresiva de la oferta principal */
+.offer-countdown {
+  --offer-accent: var(--accent);
+  width: 100%;
+  max-width: 32rem;
+  min-width: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--offer-accent) 42%, var(--border));
+  border-radius: 1rem;
+  background: var(--surface);
+  background: color-mix(in srgb, var(--offer-accent) 7%, var(--surface));
+  justify-self: end;
+}
+
+.offer-countdown-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem 1rem;
+  margin-bottom: .8rem;
+}
+
+.offer-countdown .offer-countdown-kicker {
+  margin: 0;
+  color: var(--text);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.offer-countdown time {
+  color: var(--muted);
+  font-size: .75rem;
+  white-space: nowrap;
+}
+
+.offer-countdown-units {
+  display: grid;
+  grid-template-columns: minmax(2.7rem, 1fr) auto minmax(2.7rem, 1fr) auto minmax(2.7rem, 1fr) auto minmax(2.7rem, 1fr);
+  align-items: start;
+  gap: .3rem;
+}
+
+.offer-countdown-unit {
+  display: grid;
+  justify-items: center;
+  gap: .2rem;
+}
+
+.offer-countdown-unit strong {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.offer-countdown-unit small {
+  color: var(--muted);
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.offer-countdown-separator {
+  color: var(--offer-accent);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.offer-countdown.is-expired .offer-countdown-heading {
+  margin: 0;
+}
+
+.offer-countdown.is-expired .offer-countdown-kicker {
+  color: var(--muted);
+}
+
+.offer-countdown.is-expired time,
+.offer-countdown.is-expired .offer-countdown-units {
+  display: none;
+}
+
+.offer-countdown + .offer-description {
+  margin-top: 0;
+}
+
 .offer-description {
   margin: 1.25rem 0;
 }
@@ -372,6 +490,17 @@ h3 {
 @media (max-width: 50rem) {
   .offers-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 26rem) {
+  .offer-countdown-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .offer-countdown-units {
+    gap: .15rem;
   }
 }
 
@@ -878,6 +1007,62 @@ footer {
 
   .comparison-heading {
     grid-template-columns: 1fr;
+  }
+
+  .comparison-table-wrap {
+    overflow-x: visible;
+    border-radius: 1rem;
+  }
+
+  .comparison-table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .comparison-table thead th:first-child,
+  .comparison-table tbody th {
+    width: 46%;
+  }
+
+  .comparison-table thead th:not(:first-child),
+  .comparison-table td {
+    width: 27%;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: .75rem .4rem;
+  }
+
+  .comparison-table thead th {
+    font-size: .7rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .comparison-table tbody th {
+    padding-left: .7rem;
+    font-size: .78rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  .comparison-table thead .pro-column span {
+    font-size: .56rem;
+    line-height: 1.25;
+  }
+
+  .comparison-status {
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: .95rem;
+  }
+
+  .comparison-detail {
+    font-size: .7rem;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
   }
 
   .showcase-heading {
