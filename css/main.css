@@ -911,3 +911,250 @@ footer {
     animation: none;
   }
 }
+
+.nwb-footer {
+  padding: 0;
+  border-top: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse at top left, #bbff7a09, transparent 50%),
+    #0d0f16;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.nwb-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.nwb-footer-info .brand {
+  margin-bottom: 2rem;
+}
+
+.nwb-footer-info h2 {
+  max-width: 15ch;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.15;
+}
+
+.nwb-footer-info > p {
+  max-width: 42ch;
+  margin: 1.25rem 0 1.75rem;
+  color: var(--muted);
+}
+
+/* Botones de redes */
+.nwb-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.nwb-social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  min-height: 2.9rem;
+  padding: .65rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: .75rem;
+  background: #181c28;
+  color: var(--text);
+  font-size: .9rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.nwb-social-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.nwb-social-button > span {
+  margin-left: .35rem;
+  color: var(--accent);
+}
+
+.nwb-social-button:hover {
+  border-color: var(--accent);
+  background: #222b22;
+}
+
+/* Formulario */
+.nwb-contact {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.nwb-contact-eyebrow {
+  margin: 0 0 .5rem;
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.nwb-contact h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+}
+
+.nwb-contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.nwb-field {
+  display: grid;
+  gap: .4rem;
+  min-width: 0;
+}
+
+.nwb-field label {
+  color: var(--text);
+  font-size: .85rem;
+  font-weight: 650;
+}
+
+.nwb-field input,
+.nwb-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: .8rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: .65rem;
+  background: #10131c;
+  color: var(--text);
+  font: inherit;
+}
+
+.nwb-field textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.nwb-field input::placeholder,
+.nwb-field textarea::placeholder {
+  color: #939cb3;
+  opacity: 1;
+}
+
+.nwb-field input:focus-visible,
+.nwb-field textarea:focus-visible {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.nwb-form-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+.nwb-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 3rem;
+  padding: .8rem 1.25rem;
+  border: 0;
+  border-radius: .65rem;
+  background: var(--accent);
+  color: #141d0b;
+  font: 800 .95rem/1.3 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.nwb-submit:hover {
+  background: #d2ffa6;
+}
+
+/* Franja inferior */
+.nwb-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: 1.3rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.nwb-footer-bottom a {
+  font-size: .8rem;
+  text-decoration: none;
+}
+
+.nwb-footer-bottom a:hover {
+  color: var(--accent);
+}
+
+/* Popup */
+.nwb-dialog {
+  width: min(26rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  text-align: center;
+  box-shadow: 0 2rem 5rem #00000066;
+}
+
+.nwb-dialog::backdrop {
+  background: #05070dcc;
+}
+
+.nwb-dialog-icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background: #bbff7a19;
+  color: var(--accent);
+  font-size: 1.7rem;
+}
+
+.nwb-dialog h2 {
+  font-size: 1.65rem;
+}
+
+.nwb-dialog p {
+  margin: 1rem 0 1.5rem;
+  color: var(--muted);
+}
+
+.nwb-dialog .nwb-submit {
+  width: 100%;
+}
+
+@media (max-width: 48rem) {
+  .nwb-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nwb-footer-info h2 {
+    max-width: 22ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nwb-social-button {
+    transition: none;
+  }
+}
