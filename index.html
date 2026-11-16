@@ -462,11 +462,128 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div class="container">
-        <a class="brand" href="#inicio">NeoWebBros</a>
+
+<footer class="nwb-footer" id="contacto">
+  <div class="container nwb-footer-grid">
+    <div class="nwb-footer-info">
+
+      <h2>Tu próximo paso empieza con una idea.</h2>
+
+      <p>
+        Contanos qué necesita tu comercio. Te ayudamos a crear,
+        mantener y potenciar su presencia digital.
+      </p>
+
+      <div class="nwb-socials" aria-label="Nuestras redes sociales">
+        <a
+          class="nwb-social-button"
+          href="https://www.instagram.com/neowebbros/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram de NeoWebBros, abre en otra pestaña"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            aria-hidden="true"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+          </svg>
+          Instagram
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          class="nwb-social-button"
+          href="https://www.facebook.com/profile.php?id=61596649251829"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook de NeoWebBros, abre en otra pestaña"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M13.5 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.7 1.8-1.7H17V2.5c-.8-.1-1.7-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.9H7.5V13h2.8v9z"></path>
+          </svg>
+          Facebook
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
-    </footer>
+    </div>
+
+    <section class="nwb-contact" aria-labelledby="nwb-contact-title">
+      <p class="nwb-contact-eyebrow">Hablemos de tu proyecto</p>
+      <h2 id="nwb-contact-title">¿Qué tenés en mente?</h2>
+
+      <form id="nwb-contact-form" class="nwb-contact-form">
+        <div class="nwb-field">
+          <label for="nwb-name">Nombre</label>
+          <input
+            id="nwb-name"
+            name="nombre"
+            type="text"
+            placeholder="Tu nombre"
+            autocomplete="name"
+            maxlength="100"
+            required
+          >
+        </div>
+
+        <div class="nwb-field">
+          <label for="nwb-email">Mail</label>
+          <input
+            id="nwb-email"
+            name="email"
+            type="email"
+            placeholder="nombre@ejemplo.com"
+            autocomplete="email"
+            maxlength="254"
+            required
+          >
+        </div>
+
+        <div class="nwb-field">
+          <label for="nwb-message">Mensaje</label>
+          <textarea
+            id="nwb-message"
+            name="mensaje"
+            rows="4"
+            placeholder="Contanos sobre tu comercio y qué necesitás..."
+            maxlength="3000"
+            required
+          ></textarea>
+        </div>
+
+        <p class="nwb-form-note">
+
+        </p>
+
+        <button class="nwb-submit" type="submit">
+          Enviar mensaje
+          <span aria-hidden="true">↗</span>
+        </button>
+      </form>
+    </section>
+  </div>
+
+  <div class="container nwb-footer-bottom">
+    <small>© NeoWebBros. Todos los derechos reservados.</small>
+    <a href="#inicio">Volver arriba ↑</a>
+  </div>
+</footer>
+
+<dialog class="nwb-dialog" id="nwb-success" aria-labelledby="nwb-success-title">
+  <div class="nwb-dialog-icon" aria-hidden="true">✓</div>
+  <h2 id="nwb-success-title">¡Mensaje enviado!</h2>
+
+
+  <form method="dialog">
+    <button class="nwb-submit" autofocus>Entendido</button>
+  </form>
+</dialog>
     <script src="js/main.js" defer></script>
+    <script src="js/formulario-footer.js" defer></script>
   </body>
 </html>
