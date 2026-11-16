@@ -4,101 +4,109 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex, follow" />
-    <title>Ritmo Calle | Demo NeoWebBros</title>
+    <title>Ritmo Calle | Tienda demo NeoWebBros</title>
     <link rel="stylesheet" href="../css/ritmo-calle.css" />
-    <link rel="stylesheet" href="../css/product-filters.css" />
     <link rel="stylesheet" href="../css/demo-chatbot.css" />
   </head>
   <body data-chatbot-business="ritmo-calle">
-    <header class="streethead">
-      <a href="#drop">RITMO<span>CALLE</span></a>
-      <span class="label">INDUMENTARIA URBANA / DROP 01</span>
-    </header>
-    <main>
-      <section class="poster" id="drop">
-        <p class="label">01 / ASFALTO</p>
-        <h1>HECHO PARA MOVERTE.</h1>
-        <p>Prendas amplias y accesorios para salir de casa con lo justo.</p>
-        <a href="#looks" class="stamp">VER PRENDAS ↘</a>
-      </section>
-      <nav class="stops" data-product-filter data-filter-target="#looks" aria-label="Filtrar prendas por categoría">
-        <button type="button" data-filter-value="all" aria-pressed="true">00 / TODO</button>
-        <button type="button" data-filter-value="remeras" aria-pressed="false">01 / REMERAS</button>
-        <button type="button" data-filter-value="accesorios" aria-pressed="false">02 / ACCESORIOS</button>
-        <button type="button" data-filter-value="buzos" aria-pressed="false">03 / BUZOS</button>
-        <span class="product-filter-status" data-filter-status aria-live="polite"></span>
-      </nav>
-      <section id="looks" class="lookbook">
-        <h2>DROP ASFALTO</h2>
-        <div class="wall">
-          <article id="prenda0" class="piece" data-product-category="remeras">
-            <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <rect width="600" height="320" fill="#f8b648" />
-              <path d="M0 250L600 39v44L0 294zM0 304L600 92v10L0 315z" fill="#252026" opacity=".22" />
-              <circle cx="300" cy="159" r="130" fill="#fff6c7" />
-              <text x="51" y="74" fill="#242026" font-size="44" font-weight="950">01</text>
-              <g transform="rotate(-8 300 160)">
-                <path d="M241 62l-81 45 41 64 42-19v115h114V152l42 19 41-64-81-45q-17 32-59 32t-59-32z" fill="#24242a" stroke="#111" stroke-width="5" />
-                <text x="300" y="169" text-anchor="middle" fill="#f9ec57" font-size="20" font-weight="900">RITMO</text>
-              </g>
-            </svg>
-            <div>
-              <p class="label">PRENDA / 01</p>
-              <h3>Remera Esquina</h3>
-              <p>Algodón · talles S a XL</p>
-              <strong>$ 24.900 ARS</strong>
-            </div>
-          </article>
-          <article id="prenda1" class="piece" data-product-category="accesorios">
-            <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <rect width="600" height="320" fill="#c1adf3" />
-              <path d="M0 250L600 39v44L0 294zM0 304L600 92v10L0 315z" fill="#252026" opacity=".22" />
-              <circle cx="300" cy="159" r="130" fill="#fff6c7" />
-              <text x="51" y="74" fill="#242026" font-size="44" font-weight="950">02</text>
-              <g transform="rotate(-8 300 160)">
-                <path d="M166 196q20-105 143-100q102 5 109 104z" fill="#241e36" />
-                <path d="M230 196q137-35 208 4q42 23-16 42q-92 19-192-46" fill="#54476f" />
-                <text x="278" y="158" fill="#f4e45b" font-weight="900" font-size="22">RC</text>
-              </g>
-            </svg>
-            <div>
-              <p class="label">PRENDA / 02</p>
-              <h3>Gorra Vereda</h3>
-              <p>Gabardina · ajuste posterior</p>
-              <strong>$ 18.900 ARS</strong>
-            </div>
-          </article>
-          <article id="prenda2" class="piece" data-product-category="buzos">
-            <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <rect width="600" height="320" fill="#a9c8db" />
-              <path d="M0 250L600 39v44L0 294zM0 304L600 92v10L0 315z" fill="#252026" opacity=".22" />
-              <circle cx="300" cy="159" r="130" fill="#fff6c7" />
-              <text x="51" y="74" fill="#242026" font-size="44" font-weight="950">03</text>
-              <g transform="rotate(-8 300 160)">
-                <path d="M249 104q-18-70 52-70q70 0 49 70l63 30 37 104-54 14-35-65v89H239v-89l-35 65-54-14 37-104z" fill="#273746" />
-                <path d="M268 102q35 33 67 0M270 216h60l17 30h-94z" fill="none" stroke="#87a1af" stroke-width="6" />
-              </g>
-            </svg>
-            <div>
-              <p class="label">PRENDA / 03</p>
-              <h3>Buzo Cruce</h3>
-              <p>Frisa · talles S a XL</p>
-              <strong>$ 46.900 ARS</strong>
-            </div>
-          </article>
+    <div class="shop-shell" data-storefront>
+      <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Ritmo Calle, inicio">RITMO CALLE</a>
+        <nav aria-label="Navegación principal">
+          <a href="#tienda">Tienda</a>
+          <a href="#guia">Guía de talles</a>
+          <a href="../index.html">NeoWebBros ↗</a>
+        </nav>
+        <div class="cart-summary" aria-label="Resumen del carrito simulado">
+          <span>Carrito</span>
+          <strong><span data-cart-count>0</span> ítems</strong>
+          <small data-cart-total>$ 0</small>
         </div>
-      </section>
-      <section class="sizing">
-        <h2>Encontrá tu talle</h2>
-        <p>Medí de axila a axila una prenda que ya te quede cómoda y usá esa medida como referencia.</p>
-      </section>
-    </main>
-    <footer class="street-end">
-      <a href="#drop">↑ ARRIBA</a>
-      <span>RITMO CALLE / TIENDA DE MUESTRA</span>
-      <a href="../index.html">↗ Portfolio NeoWebBros</a>
-    </footer>
-    <script src="../js/product-filters.js" defer></script>
+      </header>
+
+      <main>
+        <section class="hero" id="inicio">
+          <div class="hero-copy">
+            <p class="eyebrow">Drop 02 · esenciales urbanos</p>
+            <h1>Vestirte simple. Moverte libre.</h1>
+            <p class="hero-intro">Prendas cómodas, tonos neutros y cortes pensados para acompañarte todos los días.</p>
+            <a class="primary-link" href="#tienda">Explorar colección</a>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <span class="hero-number">02</span>
+            <span class="hero-note">RITMO / CALLE<br />BUENOS AIRES</span>
+            <div class="hero-garment"></div>
+          </div>
+        </section>
+
+        <section class="catalog" id="tienda" aria-labelledby="catalog-title">
+          <div class="catalog-heading">
+            <div>
+              <p class="eyebrow">Colección actual</p>
+              <h2 id="catalog-title">Prendas y accesorios</h2>
+            </div>
+            <p>Una selección mockeada para demostrar búsqueda, filtros y carrito dentro de una tienda online.</p>
+          </div>
+
+          <div class="shop-tools">
+            <form class="search-box" data-product-search-form role="search">
+              <label class="sr-only" for="street-search">Buscar productos</label>
+              <span aria-hidden="true">⌕</span>
+              <input id="street-search" type="search" data-product-search placeholder="Buscar remera, buzo, accesorio..." autocomplete="off" />
+            </form>
+            <div class="category-filters" aria-label="Filtrar prendas por categoría">
+              <button type="button" data-filter-value="all" aria-pressed="true">Todo</button>
+              <button type="button" data-filter-value="remeras" aria-pressed="false">Remeras</button>
+              <button type="button" data-filter-value="abrigos" aria-pressed="false">Abrigos</button>
+              <button type="button" data-filter-value="accesorios" aria-pressed="false">Accesorios</button>
+            </div>
+            <p class="results-count" data-filter-status aria-live="polite"></p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card" data-product data-product-category="remeras" data-product-name="Remera Esquina" data-product-price="24900">
+              <div class="product-media product-media-sand" aria-hidden="true"><span class="media-code">RC / 01</span><svg viewBox="0 0 320 260"><path d="M114 53 52 87l31 52 31-16v92h92v-92l31 16 31-52-62-34c-10 19-25 29-46 29s-36-10-46-29Z" /></svg></div>
+              <div class="product-info"><p class="product-category">Remeras</p><h3>Remera Esquina</h3><p class="product-description">Algodón pesado, corte amplio y cuello reforzado.</p><div class="product-meta"><strong>$ 24.900</strong><span>S · M · L · XL</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>Agregar al carrito</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+
+            <article class="product-card" data-product data-product-category="accesorios" data-product-name="Gorra Vereda" data-product-price="18900">
+              <div class="product-media product-media-stone" aria-hidden="true"><span class="media-code">RC / 02</span><svg viewBox="0 0 320 260"><path d="M74 170c11-67 57-101 117-87 38 9 60 39 61 88H74Z" /><path class="product-shade" d="M126 170c74-20 127-12 143 7 14 17-16 34-53 32-42-2-72-16-90-39Z" /></svg></div>
+              <div class="product-info"><p class="product-category">Accesorios</p><h3>Gorra Vereda</h3><p class="product-description">Gabardina lavada y ajuste metálico posterior.</p><div class="product-meta"><strong>$ 18.900</strong><span>Talle único</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>Agregar al carrito</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+
+            <article class="product-card" data-product data-product-category="abrigos" data-product-name="Buzo Cruce" data-product-price="46900">
+              <div class="product-media product-media-forest" aria-hidden="true"><span class="media-code">RC / 03</span><svg viewBox="0 0 320 260"><path d="M122 75c-6-45 82-45 76 0l49 26 25 86-42 12-25-57v77h-90v-77l-25 57-42-12 25-86 49-26Z" /><path class="product-line" d="M134 75c16 17 36 17 52 0M134 172h52" /></svg></div>
+              <div class="product-info"><p class="product-category">Abrigos</p><h3>Buzo Cruce</h3><p class="product-description">Frisa compacta, capucha doble y bolsillo canguro.</p><div class="product-meta"><strong>$ 46.900</strong><span>S · M · L · XL</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>Agregar al carrito</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+
+            <article class="product-card" data-product data-product-category="remeras" data-product-name="Remera Línea Sur" data-product-price="27900">
+              <div class="product-media product-media-clay" aria-hidden="true"><span class="media-code">RC / 04</span><svg viewBox="0 0 320 260"><path d="M108 52 48 91l32 48 32-18v96h96v-96l32 18 32-48-60-39c-10 21-27 31-52 31s-42-10-52-31Z" /><path class="product-line" d="M126 145h68" /></svg></div>
+              <div class="product-info"><p class="product-category">Remeras</p><h3>Remera Línea Sur</h3><p class="product-description">Jersey suave con estampa mínima al frente.</p><div class="product-meta"><strong>$ 27.900</strong><span>S · M · L</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>Agregar al carrito</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+
+            <article class="product-card" data-product data-product-category="accesorios" data-product-name="Bolso Pasaje" data-product-price="32900">
+              <div class="product-media product-media-charcoal" aria-hidden="true"><span class="media-code">RC / 05</span><svg viewBox="0 0 320 260"><path d="M72 102h176l-13 111H85L72 102Z" /><path class="product-line" d="M116 107c0-52 88-52 88 0M94 139h132" /></svg></div>
+              <div class="product-info"><p class="product-category">Accesorios</p><h3>Bolso Pasaje</h3><p class="product-description">Lona encerada, correa regulable y bolsillo interior.</p><div class="product-meta"><strong>$ 32.900</strong><span>18 litros</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>Agregar al carrito</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+
+            <article class="product-card" data-product data-product-category="abrigos" data-product-name="Campera Andén" data-product-price="68900">
+              <div class="product-media product-media-olive" aria-hidden="true"><span class="media-code">RC / 06</span><svg viewBox="0 0 320 260"><path d="M119 58h82l48 44 22 104-48 9-20-65v71h-86v-71l-20 65-48-9 22-104 48-44Z" /><path class="product-line" d="M160 59v162M123 133h74" /></svg></div>
+              <div class="product-info"><p class="product-category">Abrigos</p><h3>Campera Andén</h3><p class="product-description">Gabardina liviana con cierre metálico y bolsillos amplios.</p><div class="product-meta"><strong>$ 68.900</strong><span>M · L · XL</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>Agregar al carrito</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+          </div>
+          <p class="empty-state" data-product-empty hidden>No encontramos productos con esos filtros.</p>
+          <p class="sr-only" data-cart-announcement aria-live="polite"></p>
+        </section>
+
+        <section class="size-guide" id="guia">
+          <div><p class="eyebrow">Compra con confianza</p><h2>Encontrá tu talle</h2><p>Medí de axila a axila una prenda que ya te quede cómoda y compará esa medida con la ficha del producto.</p></div>
+          <div class="size-list"><span>S · 50 cm</span><span>M · 53 cm</span><span>L · 56 cm</span><span>XL · 59 cm</span></div>
+        </section>
+      </main>
+
+      <footer><a class="brand" href="#inicio">RITMO CALLE</a><span>Tienda conceptual · Buenos Aires</span><a href="../index.html">Portfolio NeoWebBros ↗</a></footer>
+    </div>
+    <script src="../js/storefront.js" defer></script>
     <script src="../js/demo-chatbot.js" defer></script>
   </body>
 </html>

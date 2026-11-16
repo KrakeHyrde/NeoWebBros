@@ -4,205 +4,91 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noindex, follow" />
-    <title>Pixel Arcade | Demo NeoWebBros</title>
+    <title>Pixel Arcade | Tienda demo NeoWebBros</title>
     <link rel="stylesheet" href="../css/pixel-arcade.css" />
-    <link rel="stylesheet" href="../css/product-filters.css" />
     <link rel="stylesheet" href="../css/demo-chatbot.css" />
   </head>
   <body data-chatbot-business="pixel-arcade">
-    <main class="console">
-      <div class="status">
-        <span>● PLAYER 01</span>
-        <a href="../index.html">EXIT ↗</a>
-      </div>
-      <section class="screen">
-        <p class="label">PIXEL ARCADE / SISTEMA RETRO</p>
-        <h1>VOLVÉ AL NIVEL 01.</h1>
-        <p>Equipá tu rincón retro con controles, juegos y cartuchos de colección.</p>
-        <nav aria-label="Menú del arcade">
-          <a href="#inventario">▶ START</a>
-          <a href="#manual">? MANUAL</a>
-        </nav>
-      </section>
-      <section id="inventario">
-        <h2>Inventario</h2>
-        <p class="label">Filtrá el inventario</p>
-        <div class="slots">
-          <div class="controls arcade-filters" data-product-filter data-filter-target="#inventario" aria-label="Filtrar inventario por categoría">
-            <button type="button" data-filter-value="all" aria-pressed="true">00 / Todo</button>
-            <button type="button" data-filter-value="controles" aria-pressed="false">01 / Controles</button>
-            <button type="button" data-filter-value="juegos" aria-pressed="false">02 / Juegos</button>
-            <button type="button" data-filter-value="combos" aria-pressed="false">03 / Combos</button>
-            <span class="product-filter-status" data-filter-status aria-live="polite"></span>
+    <div class="console" data-storefront>
+      <header class="status-bar">
+        <a class="pixel-logo" href="#inicio"><span>PIXEL</span> ARCADE</a>
+        <nav aria-label="Navegación principal"><a href="#inventario">Juegos</a><a href="#manual">Compatibilidad</a><a href="../index.html">Exit ↗</a></nav>
+        <div class="cart-hud" aria-label="Resumen del carrito simulado"><span>Cart</span><strong><span data-cart-count>0</span> items</strong><small data-cart-total>$ 0</small></div>
+      </header>
+
+      <main>
+        <section class="screen" id="inicio">
+          <div class="screen-copy">
+            <p class="label">TIENDA RETRO / PLAYER 01</p>
+            <h1>Tu próxima partida empieza acá.</h1>
+            <p>Controles, cartuchos y consolas ficticias para equipar un rincón con mucha nostalgia y cero pantallas de carga.</p>
+            <a class="start-button" href="#inventario">▶ Ver inventario</a>
           </div>
-          <div class="panels">
-            <article class="panel p0" data-product-category="controles">
-              <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <rect width="600" height="320" fill="#ba83fa" />
-                <g stroke="#2a1a49" opacity=".25">
-                  <path d="M0 0v320" />
-                  <path d="M32 0v320" />
-                  <path d="M64 0v320" />
-                  <path d="M96 0v320" />
-                  <path d="M128 0v320" />
-                  <path d="M160 0v320" />
-                  <path d="M192 0v320" />
-                  <path d="M224 0v320" />
-                  <path d="M256 0v320" />
-                  <path d="M288 0v320" />
-                  <path d="M320 0v320" />
-                  <path d="M352 0v320" />
-                  <path d="M384 0v320" />
-                  <path d="M416 0v320" />
-                  <path d="M448 0v320" />
-                  <path d="M480 0v320" />
-                  <path d="M512 0v320" />
-                  <path d="M544 0v320" />
-                  <path d="M576 0v320" />
-                  <path d="M0 0h600" />
-                  <path d="M0 32h600" />
-                  <path d="M0 64h600" />
-                  <path d="M0 96h600" />
-                  <path d="M0 128h600" />
-                  <path d="M0 160h600" />
-                  <path d="M0 192h600" />
-                  <path d="M0 224h600" />
-                  <path d="M0 256h600" />
-                  <path d="M0 288h600" />
-                  <path d="M0 320h600" />
-                </g>
-                <path d="M63 85h28v-27h27v27h28v27h-28v27H91v-27H63zM490 212h23v-23h23v23h23v23h-23v23h-23v-23h-23z" fill="#fff1a9" />
-                <g transform="translate(300 141) rotate(-12)">
-                  <path d="M-108 3q10-43 43-43H65q34 0 44 43l13 47q10 32-14 42q-16 7-36-14L39 48h-78L-72 78q-20 21-36 14q-24-10-14-42z" fill="#2a1a49" stroke="#f9edff" stroke-width="5" />
-                  <path d="M-68-18h16V0h18v16h-18v18h-16V16h-18V0h18z" fill="#c8ee79" />
-                  <circle cx="60" cy="0" r="10" fill="#ff92ba" />
-                  <circle cx="82" cy="22" r="10" fill="#93e2ff" />
-                </g>
-              </svg>
-              <div>
-                <h3>Control Turbo 8</h3>
-                <p>Accesorio · USB para PC</p>
-                <strong>$ 29.900 ARS</strong>
-              </div>
+          <div class="screen-art" aria-hidden="true"><span class="pixel-star star-one">✦</span><span class="pixel-star star-two">✦</span><div class="arcade-machine"><span>PA</span><i></i></div><p>HIGH SCORE<br /><strong>084200</strong></p></div>
+        </section>
+
+        <section class="inventory" id="inventario" aria-labelledby="inventory-title">
+          <div class="inventory-heading">
+            <div><p class="label">CATÁLOGO / 06 ITEMS</p><h2 id="inventory-title">Inventario desbloqueado</h2></div>
+            <p>Datos mockeados para probar la búsqueda, los filtros y la interacción del carrito.</p>
+          </div>
+
+          <div class="shop-tools">
+            <form class="search-console" data-product-search-form role="search">
+              <label class="sr-only" for="arcade-search">Buscar en el inventario</label><span aria-hidden="true">SEARCH&gt;</span>
+              <input id="arcade-search" type="search" data-product-search placeholder="control, juego, consola..." autocomplete="off" />
+            </form>
+            <div class="arcade-filters" aria-label="Filtrar inventario por categoría">
+              <button type="button" data-filter-value="all" aria-pressed="true">Todo</button><button type="button" data-filter-value="controles" aria-pressed="false">Controles</button><button type="button" data-filter-value="juegos" aria-pressed="false">Juegos</button><button type="button" data-filter-value="consolas" aria-pressed="false">Consolas</button><button type="button" data-filter-value="combos" aria-pressed="false">Combos</button>
+            </div>
+            <p class="results-count" data-filter-status aria-live="polite"></p>
+          </div>
+
+          <div class="product-grid">
+            <article class="game-card" data-product data-product-category="controles" data-product-name="Control Turbo 8" data-product-price="29900">
+              <div class="game-art art-purple" aria-hidden="true"><span class="art-grid"></span><span class="item-code">ITEM 01</span><div class="gamepad"><i></i><b></b><em></em></div></div>
+              <div class="game-info"><p class="game-category">Control · USB</p><h3>Control Turbo 8</h3><p>Cruceta precisa, cuatro botones y cable reforzado para PC.</p><div class="game-price"><strong>$ 29.900</strong><span>Stock 12</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>+ Agregar</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
             </article>
-            <article class="panel p1" data-product-category="juegos">
-              <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <rect width="600" height="320" fill="#ef9d86" />
-                <g stroke="#2a1a49" opacity=".25">
-                  <path d="M0 0v320" />
-                  <path d="M32 0v320" />
-                  <path d="M64 0v320" />
-                  <path d="M96 0v320" />
-                  <path d="M128 0v320" />
-                  <path d="M160 0v320" />
-                  <path d="M192 0v320" />
-                  <path d="M224 0v320" />
-                  <path d="M256 0v320" />
-                  <path d="M288 0v320" />
-                  <path d="M320 0v320" />
-                  <path d="M352 0v320" />
-                  <path d="M384 0v320" />
-                  <path d="M416 0v320" />
-                  <path d="M448 0v320" />
-                  <path d="M480 0v320" />
-                  <path d="M512 0v320" />
-                  <path d="M544 0v320" />
-                  <path d="M576 0v320" />
-                  <path d="M0 0h600" />
-                  <path d="M0 32h600" />
-                  <path d="M0 64h600" />
-                  <path d="M0 96h600" />
-                  <path d="M0 128h600" />
-                  <path d="M0 160h600" />
-                  <path d="M0 192h600" />
-                  <path d="M0 224h600" />
-                  <path d="M0 256h600" />
-                  <path d="M0 288h600" />
-                  <path d="M0 320h600" />
-                </g>
-                <path d="M63 85h28v-27h27v27h28v27h-28v27H91v-27H63zM490 212h23v-23h23v23h23v23h-23v23h-23v-23h-23z" fill="#fff1a9" />
-                <g transform="rotate(12 300 160)">
-                  <rect x="208" y="69" width="184" height="182" rx="14" fill="#261845" />
-                  <rect x="222" y="81" width="156" height="105" fill="#6245a9" />
-                  <text x="300" y="140" text-anchor="middle" font-size="21" font-weight="900" fill="#ecff8d">NEBULA RUN</text>
-                  <path d="M240 212h120" stroke="#f4bddf" stroke-width="8" />
-                </g>
-              </svg>
-              <div>
-                <h3>Nebula Run</h3>
-                <p>Juego ficticio · cartucho de 16 bits</p>
-                <strong>$ 42.000 ARS</strong>
-              </div>
+
+            <article class="game-card" data-product data-product-category="juegos" data-product-name="Nebula Run" data-product-price="42000">
+              <div class="game-art art-coral" aria-hidden="true"><span class="art-grid"></span><span class="item-code">ITEM 02</span><div class="cartridge"><b>NEBULA<br />RUN</b></div></div>
+              <div class="game-info"><p class="game-category">Juego · 16 bits</p><h3>Nebula Run</h3><p>Plataformas espacial con 24 niveles y modo contrarreloj.</p><div class="game-price"><strong>$ 42.000</strong><span>Stock 7</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>+ Agregar</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
             </article>
-            <article class="panel p2" data-product-category="combos controles">
-              <svg viewBox="0 0 600 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <rect width="600" height="320" fill="#a2e5cf" />
-                <g stroke="#2a1a49" opacity=".25">
-                  <path d="M0 0v320" />
-                  <path d="M32 0v320" />
-                  <path d="M64 0v320" />
-                  <path d="M96 0v320" />
-                  <path d="M128 0v320" />
-                  <path d="M160 0v320" />
-                  <path d="M192 0v320" />
-                  <path d="M224 0v320" />
-                  <path d="M256 0v320" />
-                  <path d="M288 0v320" />
-                  <path d="M320 0v320" />
-                  <path d="M352 0v320" />
-                  <path d="M384 0v320" />
-                  <path d="M416 0v320" />
-                  <path d="M448 0v320" />
-                  <path d="M480 0v320" />
-                  <path d="M512 0v320" />
-                  <path d="M544 0v320" />
-                  <path d="M576 0v320" />
-                  <path d="M0 0h600" />
-                  <path d="M0 32h600" />
-                  <path d="M0 64h600" />
-                  <path d="M0 96h600" />
-                  <path d="M0 128h600" />
-                  <path d="M0 160h600" />
-                  <path d="M0 192h600" />
-                  <path d="M0 224h600" />
-                  <path d="M0 256h600" />
-                  <path d="M0 288h600" />
-                  <path d="M0 320h600" />
-                </g>
-                <path d="M63 85h28v-27h27v27h28v27h-28v27H91v-27H63zM490 212h23v-23h23v23h23v23h-23v23h-23v-23h-23z" fill="#fff1a9" />
-                <g transform="translate(218 86) scale(.68) rotate(-14)">
-                  <path d="M-108 3q10-43 43-43H65q34 0 44 43l13 47q10 32-14 42q-16 7-36-14L39 48h-78L-72 78q-20 21-36 14q-24-10-14-42z" fill="#2a1a49" stroke="#f9edff" stroke-width="5" />
-                  <path d="M-68-18h16V0h18v16h-18v18h-16V16h-18V0h18z" fill="#c8ee79" />
-                  <circle cx="60" cy="0" r="10" fill="#ff92ba" />
-                  <circle cx="82" cy="22" r="10" fill="#93e2ff" />
-                </g>
-                <g transform="translate(368 192) scale(.75) rotate(12)">
-                  <path d="M-108 3q10-43 43-43H65q34 0 44 43l13 47q10 32-14 42q-16 7-36-14L39 48h-78L-72 78q-20 21-36 14q-24-10-14-42z" fill="#2a1a49" stroke="#f9edff" stroke-width="5" />
-                  <path d="M-68-18h16V0h18v16h-18v18h-16V16h-18V0h18z" fill="#c8ee79" />
-                  <circle cx="60" cy="0" r="10" fill="#ff92ba" />
-                  <circle cx="82" cy="22" r="10" fill="#93e2ff" />
-                </g>
-              </svg>
-              <div>
-                <h3>Combo Co-op</h3>
-                <p>Kit · dos controles USB</p>
-                <strong>$ 54.900 ARS</strong>
-              </div>
+
+            <article class="game-card" data-product data-product-category="combos controles" data-product-name="Combo Co-op" data-product-price="54900">
+              <div class="game-art art-mint" aria-hidden="true"><span class="art-grid"></span><span class="item-code">ITEM 03</span><div class="gamepad pad-left"><i></i><b></b><em></em></div><div class="gamepad pad-right"><i></i><b></b><em></em></div></div>
+              <div class="game-info"><p class="game-category">Combo · 2 jugadores</p><h3>Combo Co-op</h3><p>Dos controles USB listos para partidas compartidas.</p><div class="game-price"><strong>$ 54.900</strong><span>Stock 5</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>+ Agregar</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+
+            <article class="game-card" data-product data-product-category="juegos" data-product-name="Drift 94" data-product-price="38500">
+              <div class="game-art art-blue" aria-hidden="true"><span class="art-grid"></span><span class="item-code">ITEM 04</span><div class="cartridge"><b>DRIFT<br />94</b></div></div>
+              <div class="game-info"><p class="game-category">Juego · Carreras</p><h3>Drift 94</h3><p>Ocho pistas, clima dinámico y campeonato para dos jugadores.</p><div class="game-price"><strong>$ 38.500</strong><span>Stock 9</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>+ Agregar</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+
+            <article class="game-card" data-product data-product-category="consolas" data-product-name="Pocket PX" data-product-price="89900">
+              <div class="game-art art-yellow" aria-hidden="true"><span class="art-grid"></span><span class="item-code">ITEM 05</span><div class="handheld"><i>PIXEL</i><b></b><em></em></div></div>
+              <div class="game-info"><p class="game-category">Consola · Portátil</p><h3>Pocket PX</h3><p>Pantalla de 3,5 pulgadas y biblioteca ficticia preinstalada.</p><div class="game-price"><strong>$ 89.900</strong><span>Stock 4</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>+ Agregar</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
+            </article>
+
+            <article class="game-card" data-product data-product-category="combos consolas" data-product-name="Starter Pack Level 1" data-product-price="119000">
+              <div class="game-art art-pink" aria-hidden="true"><span class="art-grid"></span><span class="item-code">ITEM 06</span><div class="console-box"><i>LEVEL 1</i></div><div class="mini-pad">+</div></div>
+              <div class="game-info"><p class="game-category">Combo · Consola</p><h3>Starter Pack Level 1</h3><p>Mini consola, control inalámbrico y juego de aventura.</p><div class="game-price"><strong>$ 119.000</strong><span>Stock 3</span></div><div class="buy-actions"><button class="add-button" type="button" data-add-to-cart>+ Agregar</button><div class="quantity-stepper" data-quantity-control hidden><button type="button" data-quantity-change="-1" aria-label="Restar una unidad">−</button><output data-product-quantity aria-live="polite">0</output><button type="button" data-quantity-change="1" aria-label="Sumar una unidad">+</button></div></div></div>
             </article>
           </div>
-        </div>
-      </section>
-      <details id="manual">
-        <summary>Manual de compatibilidad</summary>
-        <p>Antes de elegir un accesorio, compará el puerto de tu equipo con la conexión indicada en su ficha.</p>
-      </details>
-    </main>
-    <footer class="credits">
-      <span>PIXEL ARCADE</span>
-      <span>CRÉDITOS / DEMO DE NEOWEBBROS</span>
-      <a href="../index.html">SALIR</a>
-    </footer>
-    <script src="../js/product-filters.js" defer></script>
+          <p class="empty-state" data-product-empty hidden>&gt; No hay coincidencias. Probá otra búsqueda.</p>
+          <p class="sr-only" data-cart-announcement aria-live="polite"></p>
+        </section>
+
+        <section class="manual" id="manual">
+          <div><p class="label">MANUAL / COMPATIBILIDAD</p><h2>Conectá y jugá</h2></div>
+          <p>Los artículos de esta demo son ficticios. En una tienda real, cada ficha puede mostrar puertos compatibles, requisitos y garantías antes de comprar.</p>
+          <ul><li>USB · PC y Mac</li><li>HDMI · Pantallas modernas</li><li>2.4 GHz · Inalámbrico</li></ul>
+        </section>
+      </main>
+
+      <footer class="credits"><span>PIXEL ARCADE © 2026</span><span>DEMO E-COMMERCE</span><a href="../index.html">NEOWEBBROS / EXIT</a></footer>
+    </div>
+    <script src="../js/storefront.js" defer></script>
     <script src="../js/demo-chatbot.js" defer></script>
   </body>
 </html>

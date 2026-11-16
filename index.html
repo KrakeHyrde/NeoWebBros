@@ -355,9 +355,33 @@
       </section>
     <section class="section container offers" id="ofertas" aria-labelledby="titulo-ofertas">
       <header class="offers-heading">
-        <p class="eyebrow">Combiná servicios y potenciá tu comercio</p>
-        <h2 id="titulo-ofertas">Más posibilidades para tu negocio</h2>
-        <p class="section-intro">Elegí una de nuestras propuestas por tiempo limitado para mantener, mejorar y dar a conocer tu web.</p>
+        <div>
+          <p class="eyebrow">Combiná servicios y potenciá tu comercio</p>
+          <h2 id="titulo-ofertas">Más posibilidades para tu negocio</h2>
+          <p class="section-intro">Elegí una de nuestras propuestas por tiempo limitado para mantener, mejorar y dar a conocer tu web.</p>
+        </div>
+        <div
+            class="offer-countdown"
+            data-offer-countdown
+            data-deadline="2027-01-01T23:59:59-03:00"
+            role="group"
+            aria-labelledby="offer-countdown-title"
+          >
+            <div class="offer-countdown-heading">
+              <p class="offer-countdown-kicker" id="offer-countdown-title">La oferta termina en</p>
+              <time datetime="2027-01-01T23:59:59-03:00">01 de Enero, 23:59 h</time>
+            </div>
+            <div class="offer-countdown-units" aria-hidden="true">
+              <span class="offer-countdown-unit"><strong data-countdown-days>00</strong><small>Días</small></span>
+              <span class="offer-countdown-separator">:</span>
+              <span class="offer-countdown-unit"><strong data-countdown-hours>00</strong><small>Horas</small></span>
+              <span class="offer-countdown-separator">:</span>
+              <span class="offer-countdown-unit"><strong data-countdown-minutes>00</strong><small>Min</small></span>
+              <span class="offer-countdown-separator">:</span>
+              <span class="offer-countdown-unit"><strong data-countdown-seconds>00</strong><small>Seg</small></span>
+            </div>
+            <p class="sr-only" data-countdown-status aria-live="polite"></p>
+          </div>
       </header>
 
       <div class="offers-grid">
@@ -371,6 +395,7 @@
             <p class="offer-reference">Servicios por separado <s>$500.000 / mes</s></p>
             <p class="price">$450.000 <small>ARS / mes</small></p>
           </div>
+
           <p class="offer-description">Mantené tu página al día y difundí tus productos con una propuesta que une gestión web y publicidad.</p>
           <ul class="offer-features">
             <li><strong>Web siempre actualizada</strong><span>Catálogo, precios, imágenes y promociones sin cupo fijo de productos.</span></li>
