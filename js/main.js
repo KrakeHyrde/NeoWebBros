@@ -1,5 +1,44 @@
 const carousel = document.querySelector("[data-carousel]");
 
+const processTabs = document.querySelector("[data-process-tabs]");
+
+if (processTabs) {
+  const tabs = [...processTabs.querySelectorAll("[data-process-tab]")];
+  const panels = [...processTabs.querySelectorAll("[data-process-panel]")];
+
+  const activateTab = (selectedTab) => {
+    const selectedProcess = selectedTab.dataset.processTab;
+
+    tabs.forEach((tab) => {
+      const isSelected = tab === selectedTab;
+      tab.classList.toggle("is-active", isSelected);
+      tab.setAttribute("aria-selected", String(isSelected));
+      tab.tabIndex = isSelected ? 0 : -1;
+    });
+
+    panels.forEach((panel) => {
+      panel.hidden = panel.dataset.processPanel !== selectedProcess;
+    });
+  };
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateTab(tab));
+    tab.addEventListener("keydown", (event) => {
+      let nextIndex = index;
+
+      if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+      if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = tabs.length - 1;
+      if (nextIndex === index) return;
+
+      event.preventDefault();
+      activateTab(tabs[nextIndex]);
+      tabs[nextIndex].focus();
+    });
+  });
+}
+
 if (carousel) {
   const track = carousel.querySelector("[data-carousel-track]");
   const previousButton = document.querySelector("[data-carousel-previous]");
