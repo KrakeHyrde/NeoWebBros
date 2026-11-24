@@ -1,0 +1,14 @@
+name: Deploy a Render
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Disparar Deploy Hook de Render
+        run: curl -f -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+        
