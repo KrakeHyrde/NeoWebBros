@@ -150,7 +150,14 @@
         Podés agregar Impulso Esencial a cualquiera de los dos.
       </p>
         <div class="plan-grid">
-          <article class="card">
+          <article
+            class="card plan-card"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+            aria-controls="plan-basic-dialog"
+            data-plan-dialog="plan-basic-dialog"
+          >
             <p class="eyebrow">Plan web 01</p>
             <h3>Web Básico</h3>
             <p class="price">$300.000 <small>ARS / mes</small></p>
@@ -165,8 +172,16 @@
               <li>Reunión cada dos semanas para definir cambios y mejoras.</li>
               <li>Atención diaria por WhatsApp y correo en el horario acordado.</li>
             </ul>
+            <span class="plan-card-action" aria-hidden="true">Ver detalles del plan</span>
           </article>
-          <article class="card card-pro">
+          <article
+            class="card card-pro plan-card"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+            aria-controls="plan-pro-dialog"
+            data-plan-dialog="plan-pro-dialog"
+          >
             <span class="plan-recommendation">Más completo</span>
             <p class="eyebrow">Plan web 02</p>
             <h3>Web Pro</h3>
@@ -182,8 +197,109 @@
               <li>Chatbot para responder preguntas frecuentes.</li>
               <li>Atención prioritaria todos los días, incluidos los fines de semana, en el horario acordado.</li>
             </ul>
+            <span class="plan-card-action" aria-hidden="true">Ver detalles del plan</span>
           </article>
         </div>
+
+        <dialog class="plan-dialog" id="plan-basic-dialog" aria-labelledby="plan-basic-title" aria-describedby="plan-basic-summary">
+          <div class="plan-dialog-content">
+            <header class="plan-dialog-header">
+              <div>
+                <p class="eyebrow">Plan web 01</p>
+                <h2 id="plan-basic-title">Web Básico</h2>
+              </div>
+              <form method="dialog">
+                <button class="plan-dialog-close" type="submit" aria-label="Cerrar detalles de Web Básico">×</button>
+              </form>
+            </header>
+
+            <div class="plan-dialog-price">
+              <p class="price">$300.000 <small>ARS / mes</small></p>
+              <p id="plan-basic-summary">Una base de mantenimiento continuo para que tu sitio se mantenga actualizado, seguro y preparado para crecer.</p>
+            </div>
+
+            <div class="plan-dialog-grid">
+              <section aria-labelledby="plan-basic-ideal">
+                <h3 id="plan-basic-ideal">Ideal para</h3>
+                <p>Comercios que ya tienen una web y necesitan delegar las actualizaciones frecuentes sin contratar cada cambio por separado.</p>
+              </section>
+              <section aria-labelledby="plan-basic-workflow">
+                <h3 id="plan-basic-workflow">Cómo trabajamos</h3>
+                <p>Nos reunimos cada dos semanas, definimos prioridades y programamos las tareas según el tiempo de trabajo disponible.</p>
+              </section>
+            </div>
+
+            <section class="plan-dialog-includes" aria-labelledby="plan-basic-includes">
+              <h3 id="plan-basic-includes">Qué incluye</h3>
+              <ul>
+                <li>Actualización de productos, precios, imágenes, textos y promociones.</li>
+                <li>Configuración de funciones y suscripciones compatibles con tu sitio.</li>
+                <li>Mantenimiento técnico, copias de respaldo y revisión de seguridad.</li>
+                <li>Atención por WhatsApp y correo dentro del horario acordado.</li>
+              </ul>
+            </section>
+
+            <p class="plan-dialog-note"><strong>Importante:</strong> los servicios, licencias o herramientas de terceros se cotizan por separado cuando el proyecto los requiere.</p>
+
+            <div class="plan-dialog-actions">
+              <a class="button" href="#contacto" data-plan-contact>Quiero consultar por Web Básico</a>
+              <form method="dialog">
+                <button class="button button-secondary" type="submit">Seguir comparando</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog class="plan-dialog plan-dialog-pro" id="plan-pro-dialog" aria-labelledby="plan-pro-title" aria-describedby="plan-pro-summary">
+          <div class="plan-dialog-content">
+            <header class="plan-dialog-header">
+              <div>
+                <p class="eyebrow">Plan web 02 · Más completo</p>
+                <h2 id="plan-pro-title">Web Pro</h2>
+              </div>
+              <form method="dialog">
+                <button class="plan-dialog-close" type="submit" aria-label="Cerrar detalles de Web Pro">×</button>
+              </form>
+            </header>
+
+            <div class="plan-dialog-price">
+              <p class="price">$500.000 <small>ARS / mes</small></p>
+              <p id="plan-pro-summary">Más seguimiento, mejoras de mayor alcance e integraciones para comercios con necesidades digitales más activas.</p>
+            </div>
+
+            <div class="plan-dialog-grid">
+              <section aria-labelledby="plan-pro-ideal">
+                <h3 id="plan-pro-ideal">Ideal para</h3>
+                <p>Comercios que necesitan evolucionar su experiencia de compra, conectar sistemas y resolver cambios con prioridad.</p>
+              </section>
+              <section aria-labelledby="plan-pro-workflow">
+                <h3 id="plan-pro-workflow">Cómo trabajamos</h3>
+                <p>Revisamos avances cada semana, acordamos el próximo bloque de trabajo y damos prioridad a las consultas del plan.</p>
+              </section>
+            </div>
+
+            <section class="plan-dialog-includes" aria-labelledby="plan-pro-includes">
+              <h3 id="plan-pro-includes">Qué incluye</h3>
+              <ul>
+                <li>Todo lo incluido en Web Básico, con seguimiento semanal.</li>
+                <li>Rediseños y optimizaciones del recorrido de compra.</li>
+                <li>Integraciones con stock, facturación, ERP o CRM según compatibilidad.</li>
+                <li>Configuración de un chatbot para consultas frecuentes.</li>
+                <li>Atención prioritaria, incluidos los fines de semana, en el horario acordado.</li>
+              </ul>
+            </section>
+
+            <p class="plan-dialog-note"><strong>Importante:</strong> cada integración se evalúa antes de comenzar. Las licencias y servicios de terceros se cotizan por separado.</p>
+
+            <div class="plan-dialog-actions">
+              <a class="button" href="#contacto" data-plan-contact>Quiero consultar por Web Pro</a>
+              <form method="dialog">
+                <button class="button button-secondary" type="submit">Seguir comparando</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
         <section class="plan-comparison" aria-labelledby="titulo-comparacion">
           <div class="comparison-heading">
             <div>

@@ -1,5 +1,44 @@
 const carousel = document.querySelector("[data-carousel]");
 
+const planCards = document.querySelectorAll("[data-plan-dialog]");
+let activePlanTrigger = null;
+
+const openPlanDialog = (trigger) => {
+  const dialog = document.getElementById(trigger.dataset.planDialog);
+
+  if (!dialog || dialog.open) return;
+
+  activePlanTrigger = trigger;
+  document.body.classList.add("has-open-plan-dialog");
+  dialog.showModal();
+};
+
+planCards.forEach((card) => {
+  card.addEventListener("click", () => openPlanDialog(card));
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+
+    event.preventDefault();
+    openPlanDialog(card);
+  });
+});
+
+document.querySelectorAll(".plan-dialog").forEach((dialog) => {
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+
+  dialog.querySelectorAll("[data-plan-contact]").forEach((link) => {
+    link.addEventListener("click", () => dialog.close());
+  });
+
+  dialog.addEventListener("close", () => {
+    document.body.classList.remove("has-open-plan-dialog");
+    activePlanTrigger?.focus();
+    activePlanTrigger = null;
+  });
+});
+
 const processTabs = document.querySelector("[data-process-tabs]");
 
 if (processTabs) {
